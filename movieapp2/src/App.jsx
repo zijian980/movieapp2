@@ -5,7 +5,11 @@ import './App.css'
 
 const App = () => {
   return (
-    <h2>Functional Arrow Componet</h2>
+    <div>
+      <h1 class="text-3xl font-bold underline">
+        Hello world!
+      </h1>
+    </div>
   )
 }
 
