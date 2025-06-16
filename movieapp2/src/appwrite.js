@@ -11,6 +11,7 @@ const client = new Client()
 
 const database = new Databases(client)
 
+// Function to update or create a search term document in the Appwrite database
 export const updateSearchCount = async (searchTerm, movie) => {
     // 1. Use Appwrite SDK to check if the search term exists in the database
     try {
@@ -36,5 +37,18 @@ export const updateSearchCount = async (searchTerm, movie) => {
     }
     } catch (error) {
     console.error(error);
+    }
+}
+
+export const getTrendingMovies = async () => {
+    try {
+        const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
+            Query.limit(5),
+            Query.orderDesc('count')
+        ])
+        return result.documents;
+    } catch (error) {
+        console.error('Error fetching trending movies:', error);
+        return [];
     }
 }
