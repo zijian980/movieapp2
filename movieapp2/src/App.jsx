@@ -5,6 +5,7 @@ import './App.css'
 import Search from './components/Search.jsx'
 import Spinner from './components/Spinner.jsx'
 import MovieCard from './components/MovieCard.jsx'
+import { useDebounce } from 'react-use'
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -21,7 +22,16 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [movieList, setMovieList] = useState([]);
   const [isloading, setIsLoading] = useState(false);
+  const [debouncedSearchTerm, setdebouncedSearchTerm] = useState('')
 
+  // Debounce the search term to avoid too many API calls
+  // This will wait for 500ms after the last change to searchTerm before updating debouncedSearchTerm
+  // This is useful to prevent excessive API calls while the user is typing
+  useDebounce(() => {
+    setdebouncedSearchTerm(searchTerm);
+  }, 500, [searchTerm]);
+
+  // Function to fetch movies based on the search term or default to popular movies
   const fetchMovies = async (query='') => {
     setIsLoading(true);
     setErrorMessage('');
@@ -55,10 +65,12 @@ const App = () => {
       setIsLoading(false);
     }
   }
-  useEffect(() => {
-    fetchMovies(searchTerm);
 
-  },[searchTerm])
+  // Fetch movies when the component mounts or when debouncedSearchTerm changes
+  useEffect(() => {
+    fetchMovies(debouncedSearchTerm);
+
+  },[debouncedSearchTerm])
 
   return (
     <main>
