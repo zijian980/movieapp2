@@ -1,7 +1,7 @@
 <div align="center">
   <br />
-    <a href="https://www.youtube.com/watch?v=dCLhUialKPQ" target="_blank">
-      <img src="public/readme/hero.png" alt="Project Banner">
+    <a>
+      <img src="/public/readme/hero.png" alt="Project Banner">
     </a>
   <br />
   
@@ -55,13 +55,13 @@ Built with React.js for the user interface, Appwrite for backend services, and s
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
-**How to start project**
+**1. How to start project**
 ```bash
 cd movieapp2
 ```
 
 
-**Installation**
+**2. Installation**
 
 Install the project dependencies using npm:
 
@@ -69,7 +69,7 @@ Install the project dependencies using npm:
 npm install
 ```
 
-**Set Up Environment Variables**
+**3. Set Up Environment Variables**
 
 Key is hidden from public view. Will replace placeholder for demo when requested. Otherwise can use your own keys.
 
@@ -83,7 +83,7 @@ VITE_APPWRITE_COLLECTION_ID=
 
 Replace the placeholder values with your actual **[TheMovieDatabase API](https://developer.themoviedb.org/reference/intro/getting-started)** and **[Appwrite](https://apwr.dev/JSM050)** credentials.
 
-**Running the Project**
+**4. Running the Project**
 
 ```bash
 npm run dev
