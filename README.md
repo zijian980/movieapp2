@@ -21,6 +21,7 @@
 2. ⚙️ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
 4. 🤸 [Quick Start](#quick-start)
+5. ⭐️ [Demo](#demo)
 
 ## <a name="introduction">🤖 Introduction</a>
 
@@ -91,3 +92,6 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173) in your browser to view the project.
 
+## <a name="demo">⭐️ Demo</a>
+
+https://github.com/user-attachments/assets/65d0cd2f-da36-4368-9494-863a89def170
